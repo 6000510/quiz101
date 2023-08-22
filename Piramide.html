@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +7,7 @@
     <title>Pirámide Recta</title>
 </head>
 <body>
+    <h1>Traslación de una pirámide</h1>
     <script>
         function vertices(lado, altura) {
             return [
@@ -26,3 +28,15 @@ function TraslaciondePiramide (MatrVect,vt){
     }
     return MatrVect;
 }
+
+
+const ladoBase = parseFloat(prompt("Ingresa el lado de la base de la pirámide:"));
+       
+const alturaPiramide = parseFloat(prompt("Ingresa la altura de la pirámide:"));
+        
+const vectorTraslacion = [2, 3, 2]; 
+
+
+let verticesPiramide = vertices(ladoBase, alturaPiramide);
+
+verticesPiramide = traslacionPiramide
