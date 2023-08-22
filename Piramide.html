@@ -9,11 +9,20 @@
     <script>
         function vertices(lado, altura) {
             return [
-                [0, 0, 0],       // Vértice #1
-                [0, 0, 0]        // Vértice #2
-                [0,0,0]
+                [0, 0, 0],                 // Vértice #1
+                [lado, 0, 0]               // Vértice #2
+                [lado, 0, lado]            // Vértice #3
+                [0, 0, lado]               // Vértice #4
+                [lado/2 ,altura, lado/2]   //Punta Piramide
                 
-
-
                 ]
         }
+function TraslaciondePiramide (MatrVect,vt){
+
+    for(let i= 0;i < MatrVect.length; i++){
+        matrVert[i][0] += vt[0];
+        matrVert[i][1] += vt[1];
+        matrVert[i][2] += vt[2];
+    }
+    return MatrVect;
+}
