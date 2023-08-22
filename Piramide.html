@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,36 +6,43 @@
     <title>Pirámide Recta</title>
 </head>
 <body>
-    <h1>Traslación de una pirámide</h1>
     <script>
         function vertices(lado, altura) {
             return [
-                [0, 0, 0],                 // Vértice #1
-                [lado, 0, 0]               // Vértice #2
-                [lado, 0, lado]            // Vértice #3
-                [0, 0, lado]               // Vértice #4
-                [lado/2 ,altura, lado/2]   //Punta Piramide
-                
-                ]
+                [0, 0, 0],       // Vértice A
+                [lado, 0, 0],    // Vértice B
+                [lado, 0, lado], // Vértice C
+                [0, 0, lado],    // Vértice D
+                [lado / 2, altura, lado / 2] // Vértice E (punta)
+            ];
         }
-function TraslaciondePiramide (MatrVect,vt){
 
-    for(let i= 0;i < MatrVect.length; i++){
-        matrVert[i][0] += vt[0];
-        matrVert[i][1] += vt[1];
-        matrVert[i][2] += vt[2];
-    }
-    return MatrVect;
-}
+        function traslacionPiramide(matrVert, vt) {
+            // Aplicar traslación a cada vértice
+            for (let i = 0; i < matrVert.length; i++) {
+                matrVert[i][0] += vt[0];
+                matrVert[i][1] += vt[1];
+                matrVert[i][2] += vt[2];
+            }
+            return matrVert;
+        }
 
+        // Obtener el lado de la base de la pirámide
+        const ladoBase = parseFloat(prompt("Ingresa el lado de la base de la pirámide:"));
+        // Obtener la altura de la pirámide
+        const alturaPiramide = parseFloat(prompt("Ingresa la altura de la pirámide:"));
+        // Vector de traslación
+        const vectorTraslacion = [2, 3, 2];
 
-const ladoBase = parseFloat(prompt("Ingresa el lado de la base de la pirámide:"));
-       
-const alturaPiramide = parseFloat(prompt("Ingresa la altura de la pirámide:"));
-        
-const vectorTraslacion = [2, 3, 2]; 
+        // Obtener los vértices de la pirámide
+        let verticesPiramide = vertices(ladoBase, alturaPiramide);
 
+        // Aplicar la traslación a los vértices
+        verticesPiramide = traslacionPiramide(verticesPiramide, vectorTraslacion);
 
-let verticesPiramide = vertices(ladoBase, alturaPiramide);
-
-verticesPiramide = traslacionPiramide
+        // Imprimir los vértices resultantes en la consola
+        console.log("Vértices de la pirámide tras la traslación:");
+        console.log(verticesPiramide);
+    </script>
+</body>
+</html>
